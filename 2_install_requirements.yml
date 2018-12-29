@@ -1,0 +1,11 @@
+﻿---
+- name: Install requirements
+  hosts: ghost
+  become: true
+
+  tasks:
+  - name: Install dependencies
+    apt:
+      name: ['nginx', 'mariadb-server']
+      update_cache: true
+      state: present
