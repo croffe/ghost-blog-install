@@ -1,0 +1,8 @@
+﻿---
+- name: Setup Swapfile
+  hosts: ghost
+  roles:
+    - role: oefenweb.swapfile
+      swapfile_size: 8GB
+      swapfile_swappiness: 30
+      sudo: yes

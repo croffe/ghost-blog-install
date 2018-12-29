@@ -1,0 +1,16 @@
+﻿---
+- name: Update system
+  hosts: ghost
+  become: true
+
+  tasks:
+  - name: Upgrade to latest
+    apt:
+      name: "*"
+      update_cache: yes
+      state: latest
+      force_apt_get: true
+  - name: Clean up apt
+    apt:
+      autoclean: yes
+      autoremove: yes
